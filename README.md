@@ -1,2 +1,2 @@
 # NET-program
-打NET程設 終極作業
+打NET程設終極作業
