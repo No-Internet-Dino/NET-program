@@ -1,0 +1,52 @@
+namespace last
+{
+    public partial class Form1 : Form
+    {
+        int a = 0;
+        string User = "apple";
+        string Pass = "01234";
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == User && textBox2.Text == Pass)
+            {
+                label3.Text = "";
+                MessageBox.Show("登入成功");
+                Form2 f2 = new Form2();
+                f2.Show();
+            }
+            else
+            {
+                a += 1;
+                label3.Text = "剩餘失敗次數：" + Convert.ToString(3 - a);
+                if (a == 3)
+                {
+
+                    DialogResult r = MessageBox.Show("已失誤三次，強制關掉", "", MessageBoxButtons.OK);
+                    this.Close();
+
+                }
+
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            User = textBox1.Text;
+            Pass = textBox2.Text;
+
+            MessageBox.Show("已成功註冊，請重新登入");
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
